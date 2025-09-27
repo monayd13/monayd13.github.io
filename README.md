@@ -1,1 +1,1 @@
-# monayd13.github.io
+# I am an MS in Information Systems student at Santa Clara University and VP of AI for the Women in Business Club. My focus is on building AI-powered products, with interests in generative AI, agentic systems, and product strategy.
