@@ -200,8 +200,10 @@
         .hero-visual {
             position: relative;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 2rem;
         }
 
         .profile-image {
@@ -234,32 +236,47 @@
             animation: pulse 4s ease-in-out infinite;
         }
 
-        .floating-card {
+        .achievements-overlay {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, 20px);
+            display: flex;
+            gap: 2rem;
+            z-index: 5;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .achievement-stat {
+            text-align: center;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 2rem;
-            position: absolute;
-            animation: float 6s ease-in-out infinite;
+            border-radius: 15px;
+            padding: 1rem 0.8rem;
+            min-width: 90px;
+            transition: all 0.3s ease;
+            flex: 1;
+            max-width: 120px;
         }
 
-        .floating-card:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
+        .achievement-stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
         }
 
-        .floating-card:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .floating-card:nth-child(3) {
-            bottom: 10%;
-            left: 20%;
-            animation-delay: 4s;
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--white);
+            font-weight: 500;
         }
 
         /* Sections */
@@ -287,7 +304,28 @@
             font-size: 1.2rem;
             color: var(--gray);
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 2rem auto;
+        }
+
+        .section-image {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .section-headshot {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .section-headshot:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
         }
 
         /* Cards */
@@ -459,10 +497,6 @@
         }
 
         /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
 
         @keyframes profileFloat {
             0%, 100% { transform: translateY(0px) scale(1); }
@@ -511,6 +545,26 @@
                 height: 220px;
             }
             
+            .achievements-overlay {
+                position: static;
+                transform: none;
+                margin-top: 2rem;
+                flex-direction: row;
+                gap: 1rem;
+                justify-content: center;
+                width: 100%;
+            }
+            
+            .achievement-stat {
+                min-width: 80px;
+                max-width: 100px;
+                padding: 0.8rem 0.5rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
             .nav-links {
                 display: none;
             }
@@ -546,12 +600,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Data Scientist & AI Strategist</h1>
-                    <p class="subtitle">Transforming Data into Strategic Insights</p>
+                    <h1>Business Analyst & Product Manager</h1>
+                    <p class="subtitle">Driving Strategic Growth Through Data-Driven Insights</p>
                     <p class="description">
-                        MS Information Systems student at Santa Clara University with expertise in data analytics, 
-                        machine learning, and AI-powered product development. Proven track record of driving 
-                        business growth through data-driven strategies.
+                        MS Information Systems student at Santa Clara University with expertise in business analysis, 
+                        product strategy, and data-driven decision making. Proven track record of increasing sales 
+                        by 138% and driving business growth through strategic management and analytics.
                     </p>
                     <div class="hero-buttons">
                         <a href="MY.resume.pdf" class="btn btn-primary" target="_blank">
@@ -567,17 +621,19 @@
                         <div class="profile-glow"></div>
                         <img src="images/Aragon-Headshot-35.jpeg" alt="Mohini Yadav" class="profile-image">
                     </div>
-                    <div class="floating-card">
-                        <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--primary);"></i>
-                        <h4>Data Analytics</h4>
-                    </div>
-                    <div class="floating-card">
-                        <i class="fas fa-brain" style="font-size: 2rem; color: var(--secondary);"></i>
-                        <h4>AI Strategy</h4>
-                    </div>
-                    <div class="floating-card">
-                        <i class="fas fa-rocket" style="font-size: 2rem; color: var(--accent);"></i>
-                        <h4>Growth</h4>
+                    <div class="achievements-overlay">
+                        <div class="achievement-stat">
+                            <div class="stat-number">138%</div>
+                            <div class="stat-label">Sales Growth</div>
+                        </div>
+                        <div class="achievement-stat">
+                            <div class="stat-number">12M</div>
+                            <div class="stat-label">INR Revenue</div>
+                        </div>
+                        <div class="achievement-stat">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Target Achievement</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -588,7 +644,10 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Education</h2>
-                <p class="section-subtitle">Academic foundation in data science and business strategy</p>
+                <p class="section-subtitle">Academic foundation in business analysis and product strategy</p>
+                <div class="section-image">
+                    <img src="images/Aragon-Headshot-41.jpeg" alt="Mohini at Santa Clara University" class="section-headshot">
+                </div>
             </div>
             <div class="cards-grid">
                 <div class="card fade-in">
@@ -753,7 +812,10 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">Ready to collaborate on data-driven solutions</p>
+                <p class="section-subtitle">Ready to collaborate on strategic business solutions</p>
+                <div class="section-image">
+                    <img src="images/Aragon-Headshot-75.jpeg" alt="Mohini Yadav - Professional Contact" class="section-headshot">
+                </div>
             </div>
             <div class="contact-info">
                 <a href="tel:+13412247278" class="contact-item">
