@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohini Yadav - AI Product Strategist</title>
+    <title>Mohini Yadav - Data Analyst & AI Strategist</title>
     <style>
         * {
             margin: 0;
@@ -16,67 +16,79 @@
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow-x: hidden;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 4rem 0;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
+            margin-bottom: 2rem;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
-            text-align: center;
+            animation: fadeInUp 1s ease-out;
         }
         
-        .profile-section {
-            margin-bottom: 2rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
+        .header h1 {
+            font-size: 3rem;
             margin-bottom: 0.5rem;
             color: #2c3e50;
             font-weight: 700;
+            animation: slideInLeft 1s ease-out 0.2s both;
         }
         
-        .subtitle {
-            font-size: 1.2rem;
+        .header .subtitle {
+            font-size: 1.3rem;
             color: #7f8c8d;
             margin-bottom: 1rem;
-            font-weight: 300;
+            animation: slideInRight 1s ease-out 0.4s both;
         }
         
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.8;
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             color: #34495e;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            color: #667eea;
         }
         
         .buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-top: 2rem;
+            animation: bounceIn 1s ease-out 0.8s both;
         }
         
         .btn {
-            display: inline-block;
             padding: 12px 30px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-primary {
@@ -86,110 +98,484 @@
         }
         
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
         }
         
-        .btn-secondary {
-            background: transparent;
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
+        
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 4px solid #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .education-item:hover, .experience-item:hover, .project-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .item-date {
+            color: #7f8c8d;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .item-subtitle {
             color: #667eea;
-            border: 2px solid #667eea;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
         
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
+        .item-description {
+            color: #34495e;
+            line-height: 1.6;
         }
         
-        .interests {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #ecf0f1;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
         
-        .interests h3 {
+        .skill-category {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-category h4 {
             color: #2c3e50;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
         
-        .interest-tags {
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            justify-content: center;
         }
         
-        .tag {
+        .skill-tag {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 500;
+            animation: pulse 2s infinite;
         }
         
-        .contact-info {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #ecf0f1;
-            color: #7f8c8d;
+        .achievement {
+            background: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid #2ecc71;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
         
         @media (max-width: 768px) {
             .container {
-                margin: 1rem;
-                padding: 1.5rem;
+                padding: 1rem;
             }
             
-            h1 {
+            .header h1 {
                 font-size: 2rem;
             }
             
-            .buttons {
+            .contact-info {
                 flex-direction: column;
-                align-items: center;
+                gap: 1rem;
             }
             
-            .btn {
-                width: 200px;
+            .item-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="profile-section">
+        <header class="header">
             <h1>Mohini Yadav</h1>
-            <p class="subtitle">AI Product Strategist & MS Information Systems Student</p>
-            <p class="description">
-                I am an MS in Information Systems student at Santa Clara University and VP of AI for the Women in Business Club. 
-                My focus is on building AI-powered products, with interests in generative AI, agentic systems, and product strategy.
-            </p>
-        </div>
-        
-        <div class="buttons">
-            <a href="MY.resume.pdf" class="btn btn-primary" target="_blank">📄 View My Resume</a>
-            <a href="mailto:myadav1@scu.edu" class="btn btn-secondary">✉️ Contact Me</a>
-        </div>
-        
-        <div class="interests">
-            <h3>Areas of Interest</h3>
-            <div class="interest-tags">
-                <span class="tag">Generative AI</span>
-                <span class="tag">Agentic Systems</span>
-                <span class="tag">Product Strategy</span>
-                <span class="tag">Natural Language Processing</span>
-                <span class="tag">AI-Powered Products</span>
-                <span class="tag">Information Systems</span>
+            <p class="subtitle">Data Analyst & AI Product Strategist</p>
+            <div class="contact-info">
+                <a href="tel:+13412247278" class="contact-item">📞 341.224.7278</a>
+                <a href="mailto:myadav@scu.edu" class="contact-item">✉️ myadav@scu.edu</a>
+                <a href="https://github.com/monayd13" class="contact-item" target="_blank">🔗 github.com/monayd13</a>
             </div>
-        </div>
-        
-        <div class="contact-info">
-            <p>Santa Clara University | Women in Business Club - VP of AI</p>
-            <p>Building the future of AI-powered products</p>
-        </div>
+            <div class="buttons">
+                <a href="MY.resume.pdf" class="btn btn-primary" target="_blank">📄 Download Resume PDF</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>🎓 Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Master of Science in Information Systems</div>
+                    <div class="item-date">September 2024 – May 2026</div>
+                </div>
+                <div class="item-subtitle">Santa Clara University, Santa Clara, CA</div>
+                <div class="item-description">Data Analytics, Database Management System, Software Project Management</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">MBA</div>
+                    <div class="item-date">August 2016 – May 2018</div>
+                </div>
+                <div class="item-subtitle">Motilal Nehru Institute Of Research, Prayagraj, India</div>
+                <div class="item-description">International Marketing Management, Advertising and Media Planning, eCommerce</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="item-header">
+                    <div class="item-title">Bachelor of Science</div>
+                    <div class="item-date">August 2013 – May 2016</div>
+                </div>
+                <div class="item-subtitle">University of Allahabad, Prayagraj, India</div>
+                <div class="item-description">Physics, Chemistry, Mathematics</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💼 Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Intern</div>
+                    <div class="item-date">Feb 2025 – May 2025</div>
+                </div>
+                <div class="item-subtitle">Box, Inc - Redwood City, CA</div>
+                <div class="item-description">
+                    • Analyzing customer behavior and transaction data to identify upsell opportunities and develop targeted growth strategies for small accounts (< $10K TAV)<br>
+                    • Developing churn risk models by detecting early non-payment signals and isolating key risk factors to enable proactive retention interventions<br>
+                    • Building data-driven customer profiles and delivering actionable insights through dashboards to empower business teams in enhancing revenue and reducing churn
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Area Manager</div>
+                    <div class="item-date">April 2021 – May 2023</div>
+                </div>
+                <div class="item-subtitle">ICICI Prudential Life Insurance, Prayagraj, India</div>
+                <div class="item-description">
+                    <div class="achievement">🏆 Achieved a 138% increase in regional sales by expanding distribution channels</div>
+                    • Maintained a 90% activity rate and ensured all team members met sales targets while achieving a 95% persistency (renewal) goal<br>
+                    • Key roles included risk and compliance management, increased branch performance by 130%, analyzed customer data<br>
+                    • Prepared sales reports for senior management, eventually increasing profitability by 12 million INR<br>
+                    • Expertise: Management Team Supervision, Territory Management, Sales Training
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Sales Manager</div>
+                    <div class="item-date">April 2019 – April 2021</div>
+                </div>
+                <div class="item-subtitle">ICICI Prudential Life Insurance, Prayagraj, India</div>
+                <div class="item-description">
+                    • Target parameter met for 13 month persistency of 87% and the I-contribution of over 100%<br>
+                    • Recruited and trained highly-qualified staff through best practices, products, and sales strategies<br>
+                    <div class="achievement">🏆 Achieved 100% target achievement in five months (STAR Program)</div>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div class="item-title">Management Trainee</div>
+                    <div class="item-date">May 2018 – March 2019</div>
+                </div>
+                <div class="item-subtitle">ICICI Prudential Life Insurance, Prayagraj, India</div>
+                <div class="item-description">
+                    • Achieved each target benchmark in Sales, Service and Direct Marketing areas within one year of Target for 5.566,125 USD<br>
+                    • 95% F2F on given resources under Pre-Fixed Appointment/D2FSC leads every month<br>
+                    • Expertise: Presentations and Proposals, Data Analysis and allocation, Lead Management
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🛠️ Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Database</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Microsoft SQL</span>
+                        <span class="skill-tag">BigQuery</span>
+                        <span class="skill-tag">Google Firebase</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Analysis Tools</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Looker</span>
+                        <span class="skill-tag">PowerBI</span>
+                        <span class="skill-tag">Data Studio</span>
+                        <span class="skill-tag">Google Analytics</span>
+                        <span class="skill-tag">Excel</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Project Management</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JIRA</span>
+                        <span class="skill-tag">Visio</span>
+                        <span class="skill-tag">SDLC</span>
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Financial Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🚀 Projects</h2>
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">U.S. Crime Data Analysis</div>
+                    <div class="item-date">Fall 2024</div>
+                </div>
+                <div class="item-description">
+                    • Analyzed 980K+ crime records, built data pipelines, and conducted temporal geospatial analysis<br>
+                    • Identified high-risk locations, peak crime hours, and key crime patterns to enhance child protection strategies
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <div class="item-title">Cross-Selling and Up-Selling Analysis</div>
+                    <div class="item-date">Spring 2022</div>
+                </div>
+                <div class="item-description">
+                    • Used existing customer data to identify cross-sell and up-sell opportunities for additional policies like health or pension plans using Python, Natural Language Processing (NLP), Data Analysis<br>
+                    • Segmented customer base using Python and data analysis techniques to identify high-value customers and tailor personalized policy recommendations based on behavior patterns
+                </div>
+            </div>
+        </section>
     </div>
+
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add hover effects to skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.boxShadow = '0 4px 8px rgba(102, 126, 234, 0.3)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Add typing effect to the main title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', () => {
+            const title = document.querySelector('.header h1');
+            const originalText = title.textContent;
+            setTimeout(() => {
+                typeWriter(title, originalText, 150);
+            }, 500);
+        });
+
+        // Add floating animation to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
