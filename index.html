@@ -463,9 +463,12 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
             margin-top: 3rem;
             flex-wrap: wrap;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-item {
@@ -474,11 +477,14 @@
             gap: 1rem;
             color: var(--white);
             text-decoration: none;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 200px;
+            flex: 1;
+            max-width: 250px;
         }
 
         .contact-item:hover {
@@ -576,6 +582,13 @@
             .contact-info {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
+            }
+            
+            .contact-item {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
             }
         }
     </style>
