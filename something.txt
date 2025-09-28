@@ -1,0 +1,53 @@
+
+1
+Mohini Yadav
+ 341.224.7278 # myadav@scu.edu ï mohini-yadav13
+§ github.com/monayd13
+Education
+Santa Clara University - Master of Science in Information Systems September 2024 – May 2026
+Data Analytics, Data Base Management System, Software Project Management Santa Clara, CA
+Motilal Nehru Institute Of Research - MBA August 2016 – May 2018
+International Marketing Management, Advertising and Media Planning, eCommerce Prayagraj, India
+University of Allahabad - Bachelor of Science August 2013 – May 2016
+Physics, Chemistry, Mathematics Prayagraj, India
+Technical Skills
+Programming: Python, SQL, Java, Javascript
+Database: MySQL, Microsoft SQL, BigQuery, Google firebase
+Analysis Tools: Tableau, Looker, PowerBI, Data Studio, Google Analytics, Excel
+Project Management Tools: JIRA, Visio, SLDC, Agile Methodologies, Financial Analysis
+Social Media: LinkedIn Top Social Media Optimization(SMO) Voice
+Experience
+Box, Inc Feb 2025 – May 2025
+Intern Redwood City, CA
+• Analyzing customer behavior and transaction data to identify upsell opportunities and develop targeted growth strategies for small
+accounts (< $10K TAV).
+• Developing churn risk models by detecting early non-payment signals and isolating key risk factors to enable proactive retention
+interventions
+• Building data-driven customer profiles and delivering actionable insights through dashboards to empower business teams in
+enhancing revenue and reducing churn
+ICICI Prudential Life Insurance April 2021 – May 2023
+Area Manager Prayagraj, India
+• Achieved a 138% increase in regional sales by expanding distribution channels, maintaining a 90% activity rate, and ensuring all
+team members met sales targets while achieving a 95% persistency (renewal) goal.
+• Key roles included risk and compliance management, increased branch performance by 130%, analyzed customer data, prepared
+sales reports for senior management, eventually increasing profitability by 12 million INR.
+• Expertise included Management Team Supervision, Territory Management, Sales Training.
+ICICI Prudential Life Insurance April 2019 – April 2021
+Sales Manager Prayagraj, India
+• Target parameter met for 13 month persistency of 87% and the I-contribution of over 100%.
+• Recruited and trained highly-qualified staff through best practices, products, and sales strategies, resulting in 100% target
+achievement in five months (STAR Program).
+ICICI Prudential Life Insurance May 2018 – March 2019
+Management Trainee Prayagraj, India
+• Achieved each target benchmark in Sales, Service and Direct Marketing areas within one year of Target for 5.566,125 USD.
+• 95% F2F on given resources under Pre-Fixed Appointment/D2FSC leads every month.
+• Expertise included Presentations and Proposals, Data Analysis and allocation, Lead Management.
+Projects
+U.S. Crime Data Analysis Fall 2024
+• Analyzed 980K+ crime records, built data pipelines, and conducted temporal geospatial analysis.
+• Identified high-risk locations, peak crime hours, and key crime patterns to enhance child protection strategies.
+Cross-Selling and Up-Selling Analysis Spring 2022
+• Use existing customer data to identify cross-sell and up-sell opportunities for additional policies like health or pension plans using
+Python, Natural Language Processing (NLP), Data Analysis.
+• Segmented customer base using Python and data analysis techniques to identify high-value customers and tailor personalized policy
+recommendations based on behavior patterns.

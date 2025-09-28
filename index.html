@@ -204,6 +204,36 @@
             align-items: center;
         }
 
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 10;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+
+        .profile-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-glow {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: var(--gradient);
+            opacity: 0.3;
+            filter: blur(20px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
         .floating-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
@@ -434,6 +464,16 @@
             50% { transform: translateY(-20px); }
         }
 
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.2; }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -459,6 +499,16 @@
             
             .hero-text h1 {
                 font-size: 2.5rem;
+            }
+            
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .profile-glow {
+                width: 220px;
+                height: 220px;
             }
             
             .nav-links {
@@ -513,6 +563,10 @@
                     </div>
                 </div>
                 <div class="hero-visual">
+                    <div class="profile-container">
+                        <div class="profile-glow"></div>
+                        <img src="images/Aragon-Headshot-35.jpeg" alt="Mohini Yadav" class="profile-image">
+                    </div>
                     <div class="floating-card">
                         <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--primary);"></i>
                         <h4>Data Analytics</h4>
